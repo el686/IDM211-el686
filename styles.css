@@ -1,1 +1,70 @@
 styles.css
+
+/* Simple reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul{
+    margin: 0 0 1.5em 1.25em;
+}
+
+/* Margin */
+
+div {
+    margin-top: .5em;
+    margin-right: 1em;
+    margin-bottom: 2em;
+    margin-left: 1em;
+   }
+
+/* logo */
+.logo {
+    width: 55px; 
+    height: auto; 
+}
+
+/* Image Resizing */
+
+.container-image {
+    width: 100%; /* The image will take up 50% of the width of its container */
+    height: auto; /* Keeps the aspect ratio intact */
+}
+
+/* Global font styles */
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; /* Default size */
+    color: #000; /* Text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5rem;
+    color: #000;
+}
+
+h2, h3 {
+    font-size: 2.5 rem;
+    color: #000;
+    font-weight: bold;
+}
+
+p{
+    font-size: 1rem;
+    color: #000;
+}
+
+/* Links */
+a {
+    color: #EC6010;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Image Resizing */ 
+
