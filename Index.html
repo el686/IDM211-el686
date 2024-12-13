@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Esther Lee</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
 </head>
+
 <body>
-    <!-- Hamburger Menu Icon -->
+    <!-- Header with Hamburger -->
     <header>
-        <div class="hamburger-menu">
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="hamburger-menu" onclick="toggleMenu ()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </header>
 
     <!-- Navigation Bar -->
     <nav>
         <div class="logo">
-            <!-- Clicking on logo will navigate to index.html -->
             <a href="index.html">
                 <img src="Images/about/logo.png" alt="Esther Lee Logo" class="logo">
             </a>
         </div>
-        <!-- Initially hidden links, shown when hamburger menu is clicked -->
         <ul class="nav-links" id="nav-links">
             <li><a href="work.html">My Work</a></li>
+            <li><a href="Index.html">About Me</a></li>
             <li><a href="book.html">Susan Sontag Series</a></li>
             <li><a href="pca.html">Philadelphia Corporation for Aging</a></li>
             <li><a href="minhwa.html">Minhwa Coffee</a></li>
@@ -37,37 +38,48 @@
         </ul>
     </nav>
 
-
-    <!-- Profile Section -->
+    <!-- Main Content Section -->
     <section class="profile">
-        <div class="profile-pic"></div> <!-- Placeholder for profile image -->
-        <h1>Hey, it’s Esther.</h1>
+        <div class="profile-pic"></div> 
+        <h1>Hey, it’s Esther!</h1>
         <p>
-            Nice to meet you! I’m a designer with a fine arts background and a Bachelor of Graphic Design, 
-            along with an Interactive Digital Media minor from Drexel University. My work focuses on brand identity, 
+            Nice to meet you ~ I’m a designer with a fine arts background and a Bachelor of Graphic Design, 
+            along with an Interactive Digital Media minor from Drexel University. <br><br> My work focuses on brand identity, 
             illustration, and typography layouts, and I've recently developed an interest in creating stickers. When I'm 
             not designing, I love exploring Philadelphia's cafes and magazine shops!
         </p>
     </section>
 
+    <!--Navigation Mid Way-->
+    <section class="mid-nav">
+        <a href="work.html">My Work</a>
+    </section>
+
+
     <!-- Contact Section -->
     <section class="contact">
-        <p>Contact me: <a href="mailto:el686@drexel.edu">el686@drexel.edu</a></p>
+        <p>Let's Connect!</p>
+        <p>My Contact: <a href="mailto:el686@drexel.edu">el686@drexel.edu</a></p>
         <p><a href="https://www.linkedin.com/in/esther-lee-05ba84276/">LinkedIn</a></p>
         <p><a href="https://www.instagram.com/esthercreativity/?hl=en">Instagram</a></p>
     </section>
 
-    <!-- Placeholder for Project/Image -->
-    <section class="project-placeholder">
-        <div class="image-placeholder"></div> <!-- Placeholder for future content -->
-    </section>
-
-    <!-- Image -->
+    <!-- Profile Image -->
     <img src="../IDM221-el686/Images/about/esther.jpg" alt="esther profile image" class="container-image"/>
 
-    <!-- Back to Top -->
+    <!-- Footer -->
     <footer>
         <a href="#top">Back to the Top</a>
     </footer>
+
+<!-- JavaScript for Menu-->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
 </body>
+
 </html>
