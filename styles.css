@@ -6,16 +6,13 @@ styles.css
     padding: 0;
     box-sizing: border-box;
 }
-ul{
-    margin: 0 0 1.5em 1.25em;
-}
 
 /* Margin */
 div {
     margin-top: .5em;
-    margin-right: 1.5em;
+    margin-right: 2em;
     margin-bottom: 2em;
-    margin-left: 1.5em;
+    margin-left: 2em;
    }
 
 /* Navigation Bar */
@@ -23,107 +20,48 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 15px 0px 15px;
     background-color: #fff;
     position: relative;
 }
-/* Navigation Bar Location */
+/* Navigation Links */
 
-header .logo {
-    order:1; 
+.nav-links {
+    list-style: none; /* Removes bullets */
+    margin: 0;        /* Resets default margin */
+    padding: 0px 15px;       /* Resets default padding */
+    gap: 30px;        /* Adds spacing between links */
+}
+
+/* Style navigation links */
+.nav-links a {
+    text-decoration: none; /* Removes underline */
+    color: black;          /* Set link color */
+    font-size: 18px;       /* Adjust font size */
+    font-weight: bold;     /* Make the text bold */
+}
+
+/* Optional: Hover effect */
+.nav-links a:hover {
+    color: #0077cc; /* Change color on hover */
+}
+
+header .logo { 
     display: flex;
     align-items: center;
 } 
 /* Logo Image*/
 header .logo img {
-    width: 55px; 
+    width: 50px; 
     height: auto; 
+    margin: 0;        /* Resets default margin */
+    padding: 0px 0px;       /* Resets default padding */
 } 
 
-/* Hamburger Menu */
-.hamburger-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000; /* Above the nav menu */
+.contact {
+    margin-bottom: 2em;
+    margin-top: 2em;
 }
-
-.hamburger-menu .bar {
-    width: 100%;
-    height: 5px; /* thickness of the lines */
-    background-color: #000; 
-    border-radius: 0px;
-    transition: transform 0.2s ease, opacity 0.3s ease;
-    margin-bottom: 2px;
-}
-
-/* Exit Button */
-.exit-button {
-    display: none; /* Initially hide the button */
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: #000; /* Button color */
-    z-index: 1001; /* Ensure it's above other elements */
-}
-
-/* Navigation Container */
-.nav-container {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Hidden off-screen by default */
-    height: 100%;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: right 0.5s ease;
-    z-index: 1000;
-}
-
-.nav-container.active .exit-button{
-    right: 0; /* Slide into view when active */
-    display: block; /* Show when the nav-container is active */
-}
-
-/* Navigation Links */
-.nav-links {
-    display: none; /* Initially hide navigation links */
-    position: fixed; /* Fix the position to the screen */
-    top: 0;
-    right: -100%; /* Start off-screen to the left */
-    width: 100%; /* Take up the full width of the screen */
-    height: 100vh; /* Make it take up the full height of the screen */
-    background-color: #fff; /* Background color */
-    padding-top: 60px; /* Adjust padding to create space from the top */
-    transition: transform 0.3s ease-in-out; /* Add a smooth sliding effect */
-    z-index: 999; /* Ensure it stays on top */
-}
-
-/* Show navigation links when active */
-.nav-links.active {
-    display: block;
-    right: 0; /* Slide fully into view */
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: block;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-}
-
 
 /* Global font styles */
     body {
@@ -138,41 +76,71 @@ header .logo img {
 
 /* Headings */
     h1 {
-        font-size: 28px;
-        color: #000;
+        font-size: 20px;
+        color: #EC6010;
         text-align: center; /* Centers the text horizontally */
+        padding: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     h2, h3 {
         font-size: 2.5 rem;
         color: #000;
+        text-align: center; /* Centers the text horizontally */
+        padding: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
         font-weight: bold;
+    }
+
+    h2:hover {
+        color: #FF5733; /* Change this to the color you want */
     }
 
     p{
         font-size: 16px;
         color: #000;
         text-align: center; /* Centers the text horizontally */
-        margin: 9px 9px 9px 9px;
+        margin-top: .5em;
+        margin-right: 2em;
+        margin-bottom: 0;
+        margin-left: 2em;        
         padding: 5px 5px 0 0 ;
+    }
+
+    .link-text{
+        color: #0686D6;
+    }
+
+    .link-text a {
+        color: #0686D6; /* Ensures the link itself is also styled */
+        text-decoration: none; /* Optional: removes underline */
+        font-weight: bold;
+    }
+
+    .connect-text {
+        color: #EC6010; /* Ensures the link itself is also styled */
+        text-decoration: none; /* Optional: removes underline */
+        font-weight: bold;
     }
 
 /* Links */
 a {
-    color: #EC6010;
+    color: #000;
     text-decoration: none;
 }
 a:hover {
     text-decoration: underline;
 }
 
-/* Mid Nav */
-.mid-nav {
-    font-size: 16px;
-    color: #000;
-    text-align: center; /* Centers the text horizontally */
-    font-weight: bold;
+.title-link {
+    text-decoration: none;
+    color: inherit; /* Keeps the color of the h2 text */
+}
 
+.title-link:hover {
+    color: #0686D6; /* Change color on hover */
 }
 
 /* Image Resizing */
@@ -191,8 +159,8 @@ footer {
     position: static;  /* Fix the footer at the bottom of the page */
     left: 0;
     width: 100%;  /* Make the footer span the full width of the page */
-    bottom: 0;  /* Align the footer to the bottom */
+    bottom: 10px;  /* Align the footer to the bottom */
     font-family: Arial, sans-serif;  /* Set the font */
-    font-size: 21px;
+    font-size: 16px;
     font-weight: Regular;
 }
