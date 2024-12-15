@@ -11,7 +11,6 @@ ul{
 }
 
 /* Margin */
-
 div {
     margin-top: .5em;
     margin-right: 1.5em;
@@ -28,26 +27,25 @@ header{
     background-color: #fff;
     position: relative;
 }
+/* Navigation Bar Location */
 
 header .logo {
     order:1; 
     display: flex;
     align-items: center;
 } 
-
+/* Logo Image*/
 header .logo img {
     width: 55px; 
     height: auto; 
 } 
 
 /* Hamburger Menu */
-
 .hamburger-menu {
-    order: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    width: 35px; /* width of the lines */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Above the nav menu */
 }
 
 .hamburger-menu .bar {
@@ -61,19 +59,38 @@ header .logo img {
 
 /* Exit Button */
 .exit-button {
+    display: none; /* Initially hide the button */
     position: absolute;
-    top: 20px;
-    left: 20px;
-    background: transparent;
+    top: 10px;
+    right: 15px;
+    background: none;
     border: none;
     font-size: 30px;
     cursor: pointer;
-    display: none; /* Initially hide the button */
+    color: #000; /* Button color */
+    z-index: 1001; /* Ensure it's above other elements */
 }
 
-/* Show the exit button when the menu is active */
-.nav-links.active + .exit-button {
-    display: block; /* Display the button when the menu is active */
+/* Navigation Container */
+.nav-container {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden off-screen by default */
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.5s ease;
+    z-index: 1000;
+}
+
+.nav-container.active .exit-button{
+    right: 0; /* Slide into view when active */
+    display: block; /* Show when the nav-container is active */
 }
 
 /* Navigation Links */
@@ -81,18 +98,19 @@ header .logo img {
     display: none; /* Initially hide navigation links */
     position: fixed; /* Fix the position to the screen */
     top: 0;
-    left: -100%; /* Start off-screen to the left */
+    right: -100%; /* Start off-screen to the left */
     width: 100%; /* Take up the full width of the screen */
     height: 100vh; /* Make it take up the full height of the screen */
     background-color: #fff; /* Background color */
     padding-top: 60px; /* Adjust padding to create space from the top */
     transition: transform 0.3s ease-in-out; /* Add a smooth sliding effect */
+    z-index: 999; /* Ensure it stays on top */
 }
 
 /* Show navigation links when active */
 .nav-links.active {
     display: block;
-    transform: translateX(0); /* Slide in from the left */
+    right: 0; /* Slide fully into view */
 }
 
 /* Responsive Design for Mobile */
