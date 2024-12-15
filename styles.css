@@ -59,30 +59,40 @@ header .logo img {
     margin-bottom: 2px;
 }
 
+/* Exit Button */
+.exit-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Initially hide the button */
+}
+
+/* Show the exit button when the menu is active */
+.nav-links.active + .exit-button {
+    display: block; /* Display the button when the menu is active */
+}
 
 /* Navigation Links */
 .nav-links {
     display: none; /* Initially hide navigation links */
-    flex-direction: column;
-    align-items: center;
+    position: fixed; /* Fix the position to the screen */
+    top: 0;
+    left: -100%; /* Start off-screen to the left */
+    width: 100%; /* Take up the full width of the screen */
+    height: 100vh; /* Make it take up the full height of the screen */
+    background-color: #fff; /* Background color */
+    padding-top: 60px; /* Adjust padding to create space from the top */
+    transition: transform 0.3s ease-in-out; /* Add a smooth sliding effect */
 }
 
 /* Show navigation links when active */
 .nav-links.active {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff; /* Optional: Add a background color */
-    position: absolute; /* Ensure it overlays content */
-    top: 50px; /* Adjust based on your header height */
-    right: 0;
-    width: 200px; /* Adjust width */
-    padding: 0%; /* Optional padding */
-
-    font-size: 24px;
-    color: #000;
-    text-align: center; /* Centers the text horizontally */
-    font-weight: Bold;
+    display: block;
+    transform: translateX(0); /* Slide in from the left */
 }
 
 /* Responsive Design for Mobile */
